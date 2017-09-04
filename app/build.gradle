@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: "$rootDir/tools/test-butler.gradle"
 
 android {
     compileSdkVersion 26
@@ -34,6 +35,12 @@ android {
             buildConfigField 'String', 'BASE_URL', baseUrl.release
         }
     }
+
+    lintOptions {
+        lintConfig file("$rootDir/tools/lintConfig/android-lint.xml")
+    }
+
+    connectedCheck.dependsOn installButlerApk
 }
 
 final AAVersion = '4.3.1'
@@ -67,10 +74,13 @@ dependencies {
     compile "org.greenrobot:eventbus:${eventBusVersion}"
     compile "de.hdodenhof:circleimageview:${circleImageViewVersion}"
 
-    androidTestCompile("com.android.support.test.espresso:espresso-core:${espressoVersion}", {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    androidTestCompile "com.android.support:appcompat-v7:${supportLibVersion}"
+    androidTestCompile "com.android.support:design:${supportLibVersion}"
+    androidTestCompile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    androidTestCompile "com.android.support:support-annotations:${supportLibVersion}"
+    androidTestCompile "com.android.support.test.espresso:espresso-contrib:${espressoVersion}"
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:${espressoVersion}"
+    androidTestCompile "com.linkedin.testbutler:test-butler-library:${rootProject.ext.testButler}"
 
     testCompile "junit:junit:${jUnitVersion}"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
