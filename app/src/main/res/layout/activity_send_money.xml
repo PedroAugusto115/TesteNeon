@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_default"
+    android:orientation="vertical"
+    tools:context="neon.desafio.banktransfer.activity.SendMoneyActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/send_money_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/transparent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:theme="@style/Theme.Toolbar">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/send_money_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/toolbar_card_text_size" />
+        </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/send_money_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/view_send_money_list_item"/>
+
+</LinearLayout>

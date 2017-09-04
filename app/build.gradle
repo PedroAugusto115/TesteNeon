@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "neon.desafio.banktransfer"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    def baseUrl = [
+            release: '"http://processoseletivoneon.azurewebsites.net/"'
+    ]
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            debuggable true
+
+            buildConfigField 'String', 'BASE_URL', baseUrl.release
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            zipAlignEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'BASE_URL', baseUrl.release
+        }
+    }
+}
+
+final AAVersion = '4.3.1'
+final canarinhoVersion = '1.2.0'
+final circleImageViewVersion = '2.1.0'
+final constraintlayoutVersion = '1.0.2'
+final espressoVersion = '2.2.2'
+final eventBusVersion = '3.0.0'
+final jUnitVersion = '4.12'
+final mpAndroidChartVersion = 'v3.0.2'
+final picassoVersion = '2.5.2'
+final okhttpVersion = '3.8.0'
+final retrofitVersion = '2.3.0'
+final supportLibVersion = '26.0.2'
+
+dependencies {
+    annotationProcessor "org.androidannotations:androidannotations:${AAVersion}"
+
+    compile "br.com.concretesolutions:canarinho:${canarinhoVersion}"
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support.constraint:constraint-layout:${constraintlayoutVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    compile "com.github.PhilJay:MPAndroidChart:${mpAndroidChartVersion}"
+    compile "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+    compile "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}"
+    compile "com.squareup.picasso:picasso:${picassoVersion}"
+    compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    compile "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    compile "org.androidannotations:androidannotations-api:${AAVersion}"
+    compile "org.greenrobot:eventbus:${eventBusVersion}"
+    compile "de.hdodenhof:circleimageview:${circleImageViewVersion}"
+
+    androidTestCompile("com.android.support.test.espresso:espresso-core:${espressoVersion}", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    testCompile "junit:junit:${jUnitVersion}"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+}

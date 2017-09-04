@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C456B</color>
+    <color name="colorPrimaryDark">#272D3A</color>
+    <color name="colorAccent">#f71928</color>
+
+    <color name="colorDefaultBackgroundTop">@color/colorPrimaryDark</color>
+    <color name="colorDefaultBackgroundMiddle">@color/colorPrimary</color>
+    <color name="colorDefaultBackgroundBottom">#175081</color>
+    <color name="colorAlertBackground">#39586A</color>
+    <color name="colorDivider">@color/colorBlueGreen</color>
+
+    <color name="titleColor">@color/colorBlueGreen</color>
+    <color name="subTitleColor">#18737A</color>
+
+    <color name="colorBlueGreen">#00A6A8</color>
+    <color name="colorBlueGreenDark">#00797b</color>
+    <color name="colorWhite">#FFF</color>
+
+    <!-- Progress View -->
+    <color name="colorProgressBackground">#80000000</color>
+</resources>

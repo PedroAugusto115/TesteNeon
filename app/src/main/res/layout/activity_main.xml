@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_default">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/main_profile_image"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        tools:src="@drawable/profile_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        app:civ_border_width="4dp"
+        app:civ_border_color="@color/colorBlueGreen"/>
+
+    <TextView
+        android:id="@+id/main_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="10dp"
+        tools:text="Pedro Pereira"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/main_profile_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/main_profile_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="5dp"
+        tools:text="pedroaugustop10@gmail.com"
+        app:layout_constraintTop_toBottomOf="@+id/main_profile_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/main_send_money_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ripple_button"
+        android:text="@string/send_money"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_history_button"
+        app:layout_constraintRight_toRightOf="@+id/main_history_button"
+        app:layout_constraintLeft_toLeftOf="@+id/main_history_button"/>
+
+    <Button
+        android:id="@+id/main_history_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ripple_button"
+        android:text="@string/main_history"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_margin="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
