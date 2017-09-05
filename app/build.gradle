@@ -47,7 +47,7 @@ final AAVersion = '4.3.1'
 final canarinhoVersion = '1.2.0'
 final circleImageViewVersion = '2.1.0'
 final constraintlayoutVersion = '1.0.2'
-final espressoVersion = '2.2.2'
+final espressoVersion = '3.0.0'
 final eventBusVersion = '3.0.0'
 final jUnitVersion = '4.12'
 final mpAndroidChartVersion = 'v3.0.2'
@@ -81,6 +81,7 @@ dependencies {
     androidTestCompile "com.android.support.test.espresso:espresso-contrib:${espressoVersion}"
     androidTestCompile "com.android.support.test.espresso:espresso-intents:${espressoVersion}"
     androidTestCompile "com.linkedin.testbutler:test-butler-library:${rootProject.ext.testButler}"
+    androidTestCompile "com.squareup.okhttp3:mockwebserver:${okhttpVersion}"
 
     testCompile "junit:junit:${jUnitVersion}"
 }
